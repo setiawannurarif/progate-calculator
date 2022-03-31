@@ -21,10 +21,10 @@ numbers.forEach((number) => {
   });
 });
 
-let prevNumber = '';
-let calculationOperator = '';
-let currentNumber = '0';
-let resultCalc = '0';
+prevNumber = '';
+calculationOperator = '';
+currentNumber = '0';
+resultCalc = '0';
 
 numbers.forEach((number) => {
   number.addEventListener('click', (event) => {
@@ -63,7 +63,9 @@ operators.forEach((operators) => {
 });
 
 const calculate = () => {
-  let result = '';
+  console.log(prevNumber);
+  console.log(currentNumber);
+  result = '';
   switch (calculationOperator) {
     case '+':
       result = parseFloat(prevNumber) + parseFloat(currentNumber);
@@ -92,7 +94,7 @@ clearBtn.addEventListener('click', () => {
 
 const clearAll = () => {
   prevNumber = '';
-  calculationOperators = '';
+  calculationOperator = '';
   currentNumber = '0';
   resultCalc = '0';
 };
