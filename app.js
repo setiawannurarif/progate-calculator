@@ -1,21 +1,25 @@
+let prevNumber = '';
+let calculationOperator = '';
+let currentNumber = '0';
+let resultCalc = '';
+
 const calculatorScreen = document.querySelector('.calc_value');
+const numbers = document.querySelectorAll('.numbers');
+const operators = document.querySelectorAll('.operators');
+const equalSign = document.querySelector('.equal-sign');
+const clearBtn = document.querySelector('.all-clear');
+const decimal = document.querySelector('.decimal');
+const percentage = document.querySelector('.percentage');
 
 const updateScreen = (number) => {
   calculatorScreen.value = number;
 };
-
-const numbers = document.querySelectorAll('.numbers');
 
 numbers.forEach((number) => {
   number.addEventListener('click', (event) => {
     updateScreen(event.target.value);
   });
 });
-
-let prevNumber = '';
-let calculationOperator = '';
-let currentNumber = '0';
-let resultCalc = '';
 
 numbers.forEach((number) => {
   number.addEventListener('click', (event) => {
@@ -29,6 +33,7 @@ const inputNumber = (number) => {
     currentNumber = number;
   } else {
     currentNumber += number;
+    console.log('assign: ' + currentNumber);
   }
 };
 
@@ -40,16 +45,11 @@ const inputOperators = (operator) => {
   currentNumber = '0';
 };
 
-const operators = document.querySelectorAll('.operators');
-
 operators.forEach((operators) => {
   operators.addEventListener('click', (event) => {
-    console.log(event.target.value);
     inputOperators(event.target.value);
   });
 });
-
-const equalSign = document.querySelector('.equal-sign');
 
 equalSign.addEventListener('click', () => {
   calculate();
@@ -80,8 +80,6 @@ const calculate = () => {
   console.log('Result: ' + currentNumber);
 };
 
-const clearBtn = document.querySelector('.all-clear');
-
 clearBtn.addEventListener('click', () => {
   clearAll();
   updateScreen(currentNumber);
@@ -92,8 +90,6 @@ const clearAll = () => {
   calculationOperators = '';
   currentNumber = '0';
 };
-
-const decimal = document.querySelector('.decimal');
 
 decimal.addEventListener('click', (event) => {
   inputDecimal(event.target.value);
@@ -107,9 +103,7 @@ inputDecimal = (dot) => {
   currentNumber += dot;
 };
 
-const percentage = document.querySelector('.percentage');
-
 percentage.addEventListener('click', () => {
-  let resultPercentage = (currentNumber = parseInt(currentNumber) / 100);
-  updateScreen(resultPercentage);
+  currentNumber = parseInt(currentNumber) / 100;
+  updateScreen(currentNumber);
 });
