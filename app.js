@@ -1,9 +1,5 @@
-let prevNumber = '';
-let calculationOperator = '';
-let currentNumber = '0';
-let resultCalc = '';
-
 const calculatorScreen = document.querySelector('.calc_value');
+const resultScreen = document.querySelector('.calc_sum');
 const numbers = document.querySelectorAll('.numbers');
 const operators = document.querySelectorAll('.operators');
 const equalSign = document.querySelector('.equal-sign');
@@ -15,11 +11,20 @@ const updateScreen = (number) => {
   calculatorScreen.value = number;
 };
 
+const updateScreenResult = (number) => {
+  resultScreen.value = number;
+};
+
 numbers.forEach((number) => {
   number.addEventListener('click', (event) => {
     updateScreen(event.target.value);
   });
 });
+
+let prevNumber = '';
+let calculationOperator = '';
+let currentNumber = '0';
+let resultCalc = '0';
 
 numbers.forEach((number) => {
   number.addEventListener('click', (event) => {
@@ -28,12 +33,18 @@ numbers.forEach((number) => {
   });
 });
 
+equalSign.addEventListener('click', () => {
+  calculate();
+  updateScreen(currentNumber);
+  updateScreenResult(resultCalc);
+  currentNumber = '';
+});
+
 const inputNumber = (number) => {
   if (currentNumber === '0') {
     currentNumber = number;
   } else {
     currentNumber += number;
-    console.log('assign: ' + currentNumber);
   }
 };
 
@@ -49,12 +60,6 @@ operators.forEach((operators) => {
   operators.addEventListener('click', (event) => {
     inputOperators(event.target.value);
   });
-});
-
-equalSign.addEventListener('click', () => {
-  calculate();
-  updateScreen(currentNumber);
-  currentNumber = '';
 });
 
 const calculate = () => {
@@ -75,20 +80,21 @@ const calculate = () => {
     default:
       break;
   }
-  currentNumber = result;
+  resultCalc = result;
   calculationOperator = '';
-  console.log('Result: ' + currentNumber);
 };
 
 clearBtn.addEventListener('click', () => {
   clearAll();
   updateScreen(currentNumber);
+  updateScreenResult(resultCalc);
 });
 
 const clearAll = () => {
   prevNumber = '';
   calculationOperators = '';
   currentNumber = '0';
+  resultCalc = '0';
 };
 
 decimal.addEventListener('click', (event) => {
