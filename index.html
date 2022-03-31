@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./stylesheet.css" />
+    <title>Progate Calculator</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="display">
+        <div class="calc">
+          <input type="text" class="calc_value" value="0" disabled />
+        </div>
+        <div class="result">
+          <input type="text" class="calc_value" disabled />
+          <!-- <div>
+            <p class="result_operator">=</p>
+          </div>
+          <div>
+            <h3 class="result_sum">10</h3>
+          </div> -->
+        </div>
+      </div>
+      <div class="container_btn">
+        <div class="calc_button">
+          <div class="calc_button__menu">
+            <span class="iconify" data-icon="ant-design:history-outlined"></span>
+            <span class="iconify toggle_display" data-icon="heroicons-solid:sun"></span>
+            <span class="iconify" data-icon="dashicons:money-alt"></span>
+          </div>
+          <div class="calc_button__operators_top">
+            <button class="btn primary operators all-clear" value="C">C</button>
+            <button class="btn secondary operators" value="+/-">+/-</button>
+            <button class="btn secondary operators percentage" value="%">%</button>
+          </div>
+          <div class="calc_button__buttons">
+            <div class="calc_button__containers_buttons">
+              <button class="btn secondary numbers" value="1">1</button>
+              <button class="btn secondary numbers" value="2">2</button>
+              <button class="btn secondary numbers" value="3">3</button>
+            </div>
+            <div class="calc_button__containers_buttons">
+              <button class="btn secondary numbers" value="4">4</button>
+              <button class="btn secondary numbers" value="5">5</button>
+              <button class="btn secondary numbers" value="6">6</button>
+            </div>
+            <div class="calc_button__containers_buttons">
+              <button class="btn secondary numbers" value="7">7</button>
+              <button class="btn secondary numbers" value="8">8</button>
+              <button class="btn secondary numbers" value="9">9</button>
+            </div>
+            <div class="calc_button__containers_buttons">
+              <button class="btn secondary numbers" value="0">0</button>
+              <button class="btn secondary operators decimal" value=".">.</button>
+              <button class="btn secondary operators" value="()">()</button>
+            </div>
+          </div>
+          <div class="calc_button__operators_right">
+            <button class="btn secondary operators" value="*">x</button>
+            <button class="btn secondary operators" value="/">:</button>
+            <button class="btn secondary operators" value="+">+</button>
+            <button class="btn secondary operators" value="-">-</button>
+            <button class="btn primary equal-sign" value="=">=</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./app.js"></script>
+    <script src="https://code.iconify.design/2/2.2.0/iconify.min.js"></script>
+  </body>
+</html>
