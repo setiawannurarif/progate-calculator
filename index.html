@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -23,11 +23,11 @@
         <div class="calc_button">
           <div class="calc_button__menu">
             <!-- <span class="iconify" data-icon="ant-design:history-outlined"></span> -->
-            <span class="iconify toggle_display" data-icon="heroicons-solid:sun"></span>
+            <span onclick="toggleDisplay()" class="iconify toggle_display" data-icon="heroicons-solid:sun"> </span>
             <!-- <span class="iconify" data-icon="dashicons:money-alt"></span> -->
           </div>
           <div class="calc_button__operators_top">
-            <button class="btn primary operators all-clear" value="AC">C</button>
+            <button class="btn primary operators all-clear" value="AC">AC</button>
             <button class="btn secondary plusMinusSign" value="+/-">+/-</button>
             <button class="btn secondary percentage">%</button>
           </div>
