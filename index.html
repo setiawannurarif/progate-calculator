@@ -10,11 +10,13 @@
   <body>
     <div class="container">
       <div class="display">
-        <div class="calc">
-          <input type="text" class="calc_value" value="0" disabled />
-        </div>
-        <div class="result">
-          <input type="text" class="calc_sum" value="0" disabled />
+        <div class="screen">
+          <div class="calc">
+            <input type="text" class="calc_value" disabled />
+          </div>
+          <div class="result">
+            <input type="text" class="calc_sum" value="0" disabled />
+          </div>
         </div>
       </div>
       <div class="container_btn">
@@ -26,7 +28,7 @@
           </div>
           <div class="calc_button__operators_top">
             <button class="btn primary operators all-clear" value="AC">C</button>
-            <button class="btn secondary operators" value="+/-">+/-</button>
+            <button class="btn secondary plusMinusSign" value="+/-">+/-</button>
             <button class="btn secondary percentage">%</button>
           </div>
           <div class="calc_button__buttons">
@@ -48,7 +50,7 @@
             <div class="calc_button__containers_buttons">
               <button class="btn secondary numbers" value="0">0</button>
               <button class="btn secondary decimal" value=".">.</button>
-              <button class="btn secondary operators" value="()">()</button>
+              <button class="btn secondary brackets" value="()">()</button>
             </div>
           </div>
           <div class="calc_button__operators_right">

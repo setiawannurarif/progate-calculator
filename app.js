@@ -23,7 +23,7 @@ numbers.forEach((number) => {
 
 prevNumber = '';
 calculationOperator = '';
-currentNumber = '0';
+currentNumber = '';
 resultCalc = '0';
 
 numbers.forEach((number) => {
@@ -53,7 +53,7 @@ const inputOperators = (operator) => {
     prevNumber = currentNumber;
   }
   calculationOperator = operator;
-  currentNumber = '0';
+  currentNumber = '';
 };
 
 operators.forEach((operators) => {
@@ -95,7 +95,7 @@ clearBtn.addEventListener('click', () => {
 const clearAll = () => {
   prevNumber = '';
   calculationOperator = '';
-  currentNumber = '0';
+  currentNumber = '';
   resultCalc = '0';
 };
 
@@ -113,5 +113,27 @@ inputDecimal = (dot) => {
 
 percentage.addEventListener('click', () => {
   currentNumber = parseInt(currentNumber) / 100;
+  updateScreen(currentNumber);
+});
+
+const plusMinusSign = document.querySelector('.plusMinusSign');
+
+plusMinusSign.addEventListener('click', () => {
+  if (currentNumber < 0) {
+    currentNumber = currentNumber * 1;
+  } else {
+    currentNumber = currentNumber * -1;
+  }
+  updateScreen(currentNumber);
+});
+
+const brackets = document.querySelector('.brackets');
+
+brackets.addEventListener('click', () => {
+  if (!currentNumber.includes('(')) {
+    currentNumber += '(';
+  } else {
+    currentNumber += ')';
+  }
   updateScreen(currentNumber);
 });

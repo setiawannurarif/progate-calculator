@@ -33,11 +33,15 @@ body {
 
 .display {
   position: relative;
-  top: min(167px, 30vw);
-  width: 100%;
+  top: min(167px, 10vw);
+  width: 80%;
+  height: 140px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: #94daff;
+  border: 1px solid #b983ff;
+  border-radius: 35px;
 }
 
 .container_btn {
@@ -49,6 +53,7 @@ body {
 
 .calc {
   width: min(290px, 90%);
+  padding-top: 30px;
 }
 
 .calc_value {
@@ -64,6 +69,8 @@ body {
   align-items: center;
   text-align: right;
   color: rgba(0, 0, 0, 0.5);
+  border: none;
+  background-color: var(--third-color--background);
 }
 
 .result {
@@ -85,29 +92,9 @@ body {
   align-items: center;
   text-align: right;
   color: rgba(0, 0, 0, 1);
+  border: none;
+  background-color: var(--third-color--background);
 }
-
-/* .result_operator {
-  font-style: normal;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 30px;
-  display: flex;
-  align-items: center;
-  text-align: right;
-  color: var(--black-color--background);
-}
-
-.result_sum {
-  font-style: normal;
-  font-weight: 700;
-  font-size: 35px;
-  line-height: 52px;
-  display: flex;
-  align-items: center;
-  text-align: right;
-  color: var(--black-color--background);
-} */
 
 .calc_button {
   position: fixed;
@@ -116,7 +103,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   width: min(376px, 100%);
-  height: min(530px, 70%);
+  height: min(530px, 60%);
   background: var(--secondary-color--background);
   border-radius: 35px;
 }
@@ -153,19 +140,19 @@ body {
   display: flex;
   position: absolute;
   padding: 1px 4px;
-  height: clamp(11.5%, 42px, 50%);
+  height: 62px;
   top: 100px;
   left: 32px;
   background: var(--third-color--background);
   border-radius: 50px;
-  gap: 4vw;
+  gap: 8vw;
 }
 
 .btn {
   position: relative;
   top: 2px;
-  width: min(56px, 16vw);
-  height: min(56px, 16vw);
+  width: 56px;
+  height: 56px;
   box-sizing: border-box;
   border-radius: 50%;
   -webkit-border-radius: 50%;
@@ -211,21 +198,21 @@ button {
 
 .calc_button__containers_buttons {
   display: flex;
-  gap: 4vw;
+  gap: 8vw;
   margin-bottom: 21px;
 }
 
 .calc_button__operators_right {
   position: absolute;
   padding: 4px 1px;
-  width: min(60px, 16.5%);
+  width: 58px;
   left: 74%;
   top: 100px;
   background: var(--third-color--background);
   border-radius: 50px;
   display: flex;
   flex-direction: column;
-  gap: 5vw;
+  gap: 5.5vw;
 }
 
 @media all and (min-width: 425px) {
@@ -248,14 +235,36 @@ button {
     -o-border-radius: 35px;
   }
 
+  .screen {
+    margin-top: 30px;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    width: 80%;
+    height: 140px;
+    background: #94daff;
+    border: 1px solid #b983ff;
+    border-radius: 35px;
+  }
+
   .calc {
     position: relative;
-    top: 15vh;
+    padding-top: 0;
+  }
+
+  .calc_value {
+    border: none;
+    background-color: var(--third-color--background);
+  }
+  .calc_sum {
+    border: none;
+    background-color: var(--third-color--background);
   }
 
   .result {
     position: relative;
-    top: 16vh;
   }
 }
 
@@ -314,22 +323,29 @@ button {
 
   .calc_button__containers_buttons {
     gap: 2vw;
+    margin-bottom: 8px;
   }
 
   .calc_button__operators_right {
     left: 74%;
-    gap: 2vw;
+    gap: 1vw;
+  }
+}
+
+@media all and (min-width: 1024px) {
+  .calc_button__operators_right {
+    gap: 0.7vw;
   }
 }
 
 @media all and (min-width: 1440px) {
   .calc {
-    top: 12vh;
+    top: 0;
     position: relative;
   }
 
   .result {
-    top: 14vh;
+    top: 0;
     position: relative;
   }
 
@@ -342,16 +358,20 @@ button {
   }
 
   .calc_button__operators_right {
-    gap: 2.2vh;
+    gap: 1.2vh;
   }
 }
 
 @media all and (min-width: 1920px) {
+  .screen {
+    margin-top: 15px;
+  }
+
   .calc {
-    top: 10vh;
+    top: 0;
   }
   .result {
-    top: 12vh;
+    top: 0;
   }
 
   .calc_button {
