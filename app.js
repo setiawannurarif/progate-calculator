@@ -1,3 +1,8 @@
+prevNumber = '';
+calculationOperator = '';
+currentNumber = '';
+resultCalc = '0';
+
 const calculatorScreen = document.querySelector('.calc_value');
 const resultScreen = document.querySelector('.calc_sum');
 const numbers = document.querySelectorAll('.numbers');
@@ -6,6 +11,8 @@ const equalSign = document.querySelector('.equal-sign');
 const clearBtn = document.querySelector('.all-clear');
 const decimal = document.querySelector('.decimal');
 const percentage = document.querySelector('.percentage');
+const plusMinusSign = document.querySelector('.plusMinusSign');
+const backspace = document.querySelector('.backspace');
 
 const updateScreen = (number) => {
   calculatorScreen.value = number;
@@ -20,11 +27,6 @@ numbers.forEach((number) => {
     updateScreen(event.target.value);
   });
 });
-
-prevNumber = '';
-calculationOperator = '';
-currentNumber = '';
-resultCalc = '0';
 
 numbers.forEach((number) => {
   number.addEventListener('click', (event) => {
@@ -116,24 +118,11 @@ percentage.addEventListener('click', () => {
   updateScreen(currentNumber);
 });
 
-const plusMinusSign = document.querySelector('.plusMinusSign');
-
 plusMinusSign.addEventListener('click', () => {
   if (currentNumber < 0) {
     currentNumber = currentNumber * 1;
   } else {
     currentNumber = currentNumber * -1;
-  }
-  updateScreen(currentNumber);
-});
-
-const brackets = document.querySelector('.brackets');
-
-brackets.addEventListener('click', () => {
-  if (!currentNumber.includes('(')) {
-    currentNumber += '(';
-  } else {
-    currentNumber += ')';
   }
   updateScreen(currentNumber);
 });
@@ -145,3 +134,8 @@ function toggleDisplay() {
     document.documentElement.setAttribute('data-theme', 'light');
   }
 }
+
+backspace.addEventListener('click', () => {
+  currentNumber = currentNumber.slice(0, -1);
+  updateScreen(currentNumber);
+});
