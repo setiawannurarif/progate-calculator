@@ -21,6 +21,7 @@ const plusMinus_sign = document.querySelector('.plusMinus_sign');
 const brackets = document.querySelector('.brackets');
 const equal_sign = document.querySelector('.equal_sign');
 const clearHistory = document.getElementById('clear__history');
+const percentage = document.querySelector('.percentage');
 
 btn__history.addEventListener('click', () => {
   btn_displayNumber.classList.toggle('disabled');
@@ -87,10 +88,16 @@ plusMinus_sign.addEventListener('click', () => {
   } else {
     currentNumber = currentNumber * -1;
   }
+  updateScreen(currentNumber);
 });
 
 decimal.addEventListener('click', (event) => {
   inputDecimal(event.target.value);
+  updateScreen(currentNumber);
+});
+
+percentage.addEventListener('click', () => {
+  currentNumber = parseInt(currentNumber) / 100;
   updateScreen(currentNumber);
 });
 
