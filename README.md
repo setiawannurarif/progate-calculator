@@ -1,3 +1,3 @@
 # Tugas Individu DTSxProgate
-[Links](https://setiawannurarif.github.io/progate-calculator/)
+[Go to](https://setiawannurarif.github.io/progate-calculator/)
 
