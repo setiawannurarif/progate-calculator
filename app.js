@@ -43,12 +43,13 @@ btn__converter.addEventListener('click', () => {
   styleNavbar.getPropertyValue('top') == '224px' ? navbar.style.setProperty('top', '313px') : navbar.style.setProperty('top', '224px');
   styleScreen.getPropertyValue('height') == '191px' ? screen.style.setProperty('height', '280px') : screen.style.setProperty('height', '191px');
   if (stylescreenCalculator.getPropertyValue('height') == '98px') {
-    screenCalculator.style.setProperty('border-bottom', '1px solid var(--background--third-color)');
     screenCalculator.style.setProperty('height', '43%');
+    screenCalculator.style.setProperty('border-bottom', '1px solid var(--background--third-color)');
     screenResult.style.setProperty('height', '43%');
   } else {
     screenCalculator.style.setProperty('height', '35%');
     screenResult.style.setProperty('height', '35%');
+    screenCalculator.style.removeProperty('border-bottom');
   }
 });
 
