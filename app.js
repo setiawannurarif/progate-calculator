@@ -3,9 +3,13 @@ let prevNumber = '';
 let operationOperator = '';
 let result = '0';
 
+const screen = document.querySelector('.screen');
 const screenCalculator = document.getElementById('screenCalculator');
 const screenResult = document.getElementById('screenCalculatorResult');
 const screenHistory = document.getElementById('history__container');
+const screenBtnCalc = document.getElementById('screenBtnCalc');
+const screenBtnConv = document.getElementById('screenBtnConv');
+const navbar = document.getElementById('navbar_container');
 
 const btn__history = document.getElementById('btn__history');
 const btn__converter = document.getElementById('btn__converter');
@@ -28,9 +32,29 @@ btn__history.addEventListener('click', () => {
   screenHistory.classList.toggle('disabled');
 });
 
+const styleScreen = window.getComputedStyle(screen);
+const styleNavbar = window.getComputedStyle(navbar);
+const stylescreenCalculator = window.getComputedStyle(screenCalculator);
+const stylescreenResult = window.getComputedStyle(screenResult);
+
 btn__converter.addEventListener('click', () => {
-  alert('BELUM JADI, SABAR YA... HEHE!');
+  screenBtnCalc.classList.toggle('disabled');
+  screenBtnConv.classList.toggle('disabled');
+  styleNavbar.getPropertyValue('top') == '224px' ? navbar.style.setProperty('top', '313px') : navbar.style.setProperty('top', '224px');
+  styleScreen.getPropertyValue('height') == '191px' ? screen.style.setProperty('height', '280px') : screen.style.setProperty('height', '191px');
+  if (stylescreenCalculator.getPropertyValue('height') == '98px') {
+    screenCalculator.style.setProperty('border-bottom', '1px solid var(--background--third-color)');
+    screenCalculator.style.setProperty('height', '43%');
+    screenResult.style.setProperty('height', '43%');
+  } else {
+    screenCalculator.style.setProperty('height', '35%');
+    screenResult.style.setProperty('height', '35%');
+  }
 });
+
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  document.documentElement.setAttribute('data-theme', 'dark');
+}
 
 btn__toggleScreen.addEventListener('click', () => {
   let isToggleLight = document.documentElement.getAttribute('data-theme') === 'light';

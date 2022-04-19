@@ -10,24 +10,23 @@
   </head>
   <body>
     <div class="container">
-      <div class="screen_container">
+      <div class="screen_container" id="screen">
         <div class="screen">
           <input type="text" class="input_calc" id="screenCalculator" disabled />
           <input type="text" class="input_result" value="0" id="screenCalculatorResult" disabled />
         </div>
       </div>
-      <div class="navbar_container">
+      <div class="navbar_container" id="navbar_container">
         <div class="navbar_left">
           <i class="fa-solid fa-clock-rotate-left icon" id="btn__history"></i>
           <i class="fa-solid fa-scale-balanced icon" id="btn__converter"></i>
           <i class="fa-solid fa-sun icon" id="btn__toggleScreen"></i>
-          <i class="fa-solid fa-moon icon disabled"></i>
         </div>
         <div class="navbar_right">
           <i class="fa-solid fa-delete-left" id="btn__backspace"></i>
         </div>
       </div>
-      <div class="buttons_container">
+      <div class="buttons_container" id="screenBtnCalc">
         <div class="btn_left" id="btn__left">
           <div class="operators_top">
             <button class="btn_primary all_clear">AC</button>
@@ -71,6 +70,40 @@
             <button class="btn_secondary btn_operators operators" value="/">&divide;</button>
             <button class="btn_secondary btn_operators operators" value="+">+</button>
             <button class="btn_secondary btn_operators operators" value="-">-</button>
+            <button class="btn_primary equal_sign">=</button>
+          </div>
+        </div>
+      </div>
+      <div class="buttonsCon_container disabled" id="screenBtnConv">
+        <div class="btn_left" id="btn__left">
+          <div class="btns">
+            <div class="row">
+              <button class="btn_secondary numbers" value="7">7</button>
+              <button class="btn_secondary numbers" value="8">8</button>
+              <button class="btn_secondary numbers" value="9">9</button>
+            </div>
+            <div class="row">
+              <button class="btn_secondary numbers" value="4">4</button>
+              <button class="btn_secondary numbers" value="5">5</button>
+              <button class="btn_secondary numbers" value="6">6</button>
+            </div>
+            <div class="row">
+              <button class="btn_secondary numbers" value="1">1</button>
+              <button class="btn_secondary numbers" value="2">2</button>
+              <button class="btn_secondary numbers" value="3">3</button>
+            </div>
+            <div class="row">
+              <button class="btn_secondary decimal" value=".">.</button>
+              <button class="btn_secondary numbers" value="0">0</button>
+              <button class="btn_secondary brackets">()</button>
+            </div>
+          </div>
+        </div>
+        <div class="btn_right">
+          <div class="operators_right">
+            <button class="btn_primary all_clear">AC</button>
+            <button class="btn_secondary btn_operators btn_up"><i class="fa-solid fa-arrow-up"></i></button>
+            <button class="btn_secondary btn_operators btn_down"><i class="fa-solid fa-arrow-down"></i></button>
             <button class="btn_primary equal_sign">=</button>
           </div>
         </div>

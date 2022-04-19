@@ -12,13 +12,10 @@ function putHistory(data) {
     } else {
       historyData = JSON.parse(localStorage.getItem(CACHE_KEY));
     }
-
     historyData.unshift(data);
-
     if (historyData.length > 5) {
       historyData.pop();
     }
-
     localStorage.setItem(CACHE_KEY, JSON.stringify(historyData));
   }
 }
@@ -41,10 +38,8 @@ function renderHistory() {
     row.className = 'history_screen';
     let calculations = history.firstNumber + history.operator + history.secondNumber;
     let result = history.result;
-
     row.innerHTML = '<h3>' + calculations + '</h3>';
     row.innerHTML += '<h2>= ' + result + '</h2>';
-
     historyScreen.appendChild(row);
   }
 }

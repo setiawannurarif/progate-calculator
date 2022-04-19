@@ -194,12 +194,14 @@ body {
   justify-content: center;
 }
 
-.buttons_container button:hover {
+.buttons_container button:hover,
+.buttonsCon_container button:hover {
   background: var(--background-btn--main-color);
   color: var(--text--main-color);
 }
 
-.buttons_container button:active {
+.buttons_container button:active,
+.buttonsCon_container button:active {
   top: 6px;
 }
 
@@ -225,7 +227,8 @@ body {
   -webkit-animation: slideDown 0.3s ease-in-out;
 }
 
-.btn_left .btns .row button {
+.btn_left .btns .row button,
+.buttonsCon_container .btn_left .btns .row button {
   margin-top: 24px;
 }
 
@@ -246,7 +249,6 @@ body {
 
   animation: slideIn 0.3s ease-in-out;
   -webkit-animation: slideIn 0.3s ease-in-out;
-  /* animation-delay: 1s; */
 }
 
 .history {
@@ -321,6 +323,67 @@ body {
   display: flex;
   justify-content: space-between;
 }
+
+.buttonsCon_container {
+  position: absolute;
+  width: 375px;
+  height: 389px;
+  left: 0px;
+  top: 421px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background: var(--background--third-color);
+  border-radius: 35px;
+  animation: slideIn 0.3s ease-out;
+  -webkit-animation: slideIn 0.3s ease-out;
+}
+
+.buttonsCon_container button {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  border: none;
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttonsCon_container .btn_right {
+  display: flex;
+  margin: 40px 33px 40px 17px;
+  padding: 2px 0;
+  width: 64px;
+  height: 311px;
+
+  justify-content: center;
+  background: var(--background-btn--secondary-color);
+  border-radius: 50px;
+}
+
+.buttonsCon_container .btn_right .operators_right button {
+  margin-bottom: 24px;
+}
+
+.buttonsCon_container .btn_left {
+  margin: 18px 0 40px 33px;
+  width: 60%;
+}
+
+/* Notes: 
+1. Screen height: 281px;
+2. Navbar top: 313px;
+*/
 
 @keyframes slideIn {
   0%,
